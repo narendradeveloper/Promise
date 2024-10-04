@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>thi task out put check console</h1>
+    <h3>Task 1: Resolve a Promise with a Value <br>
+        Task 2: Reject a Promise with an Error<br>
+        Task 3: Chain Promises <br>
+        Task 4: Handle Promise Rejection
+        </h3>
+
+    <script>
+        //resolve with promise value//
+      const mypromise1=new Promise((resolve,reject)=>{
+        resolve("promise resolved this with value")
+      })
+      mypromise1.then((value)=>{
+        console.log(value)
+      })
+
+//rejected with promise is a error//
+    const mypromise2=new Promise((resolve,reject)=>{
+        reject(new Error("promise reject with throd the error"))
+    });
+    mypromise2.catch((error)=>{
+        console.log(error.message)
+    })
+
+//chaine promise//
+    const promise3=new Promise((resolve,reject)=>{
+          resolve(5)
+    })
+    promise3.then(value=>{
+        console.log(value)
+        return value *3;
+    })
+    .then(value=>{
+console.log(value)
+    })
+
+//promise handling rejection //
+const mypromise=new Promise((resolve,reject)=>{
+    reject(new Error("promise handling rejection"))
+})
+mypromise.then(str=>{
+    console.log(str)
+})
+.catch(error=>{
+    console.log("cought erre:",error.message)
+})
+    </script>
+
+  </body>
+</html>
